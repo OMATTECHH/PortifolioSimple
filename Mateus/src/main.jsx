@@ -7,7 +7,7 @@ import Apresentacao from './Pages/Index.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter  basename="/PortifolioSimple">
     <Routes>
       <Route path='/*' element={<Home/>}/>
       <Route path='/apresentacao' element={<Apresentacao/>}/>
