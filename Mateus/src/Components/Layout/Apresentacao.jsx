@@ -5,7 +5,7 @@ import {useAutoHideHeader}  from "../../Hooks/useAutoHideHeader.jsx";
 
 const Apresentacao = () => {
 
-    const visible = useAutoHideHeader(500);
+    const {visible} = useAutoHideHeader(200);
 
     return (
         <>
@@ -18,7 +18,7 @@ const Apresentacao = () => {
         header
         fixed top-0 right-0 z-[99]
         transition-all duration-300 ease-in-out
-        ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
+        ${visible ? "opacity-100" : "opacity-0"}
         `}>
 
                 <nav className='ml-10'>

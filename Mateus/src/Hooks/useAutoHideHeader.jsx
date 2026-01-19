@@ -1,31 +1,33 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useAutoHideHeader(delay = 200) {
-    
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(true)
     const timeoutRef = useRef(null);
 
     useEffect(() => {
-        const onScroll = () => {
-            
-            setVisible(false);
 
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
+        const onscroll = () => {
+
+            setVisible(false)
+    
+            if(timeoutRef.current){
+                clearTimeout(timeoutRef.current)
             }
-
+    
             timeoutRef.current = setTimeout(() => {
-                setVisible(true);
+                setVisible(true)
             }, delay);
-        };
+        }
 
-        window.addEventListener("scroll", onScroll);
+        window.addEventListener("scroll", onscroll)
 
-        return () => {
-            window.removeEventListener("scroll", onScroll);
-            if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        };
-    }, [delay]);
+        return() => {
+            window.removeEventListener("scroll", onscroll)
+            if(timeoutRef.current){
+                clearTimeout(timeoutRef.current)
+            }
+        }
+    },[delay])
 
-    return visible;
+    return {visible}
 }
