@@ -1,5 +1,5 @@
 {
-   "homepage": "https://omattecch.github.io/PortifolioSimple",
+  "homepage": "https://omattecch.github.io/PortifolioSimple",
   "name": "story",
   "private": true,
   "version": "0.0.0",
@@ -11,20 +11,25 @@
     "preview": "vite preview",
     "server": "json-server --watch Data/db.json --port 3001",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@react-three/rapier": "^2.2.0",
     "@tailwindcss/vite": "^4.1.18",
     "gsap": "^3.14.2",
+    "meshline": "^3.3.1",
     "ogl": "^1.0.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.12.0",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@types/node": "^25.0.9",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",

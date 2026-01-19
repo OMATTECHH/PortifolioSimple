@@ -1,14 +1,12 @@
 import React from 'react'
 
 // Fundo da página
-import MetaBalls from '../Common/MetaBalls'
-import  Box  from '../Layout/Box'
+import Principal from './Principal'
 
 const Index = () => {
     return (
         <>
-            <MetaBalls/>
-            <Box/>
+            <Principal/>
         </>
     )
 }

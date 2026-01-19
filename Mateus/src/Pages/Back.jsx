@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Apresentacao from '../Components/Layout/Apresentacao'
-import MetaBalls from '../Components/Common/MetaBalls'
+import Galaxy from "../Components/Common/Galaxy";
 
 const Back = () => {
     return (
         <>  
-            <MetaBalls/>
+            <Galaxy/>
             <Apresentacao/>
         </>
     )

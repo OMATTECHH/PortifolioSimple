@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import {useAutoHideHeader}  from "../../Hooks/useAutoHideHeader.jsx";
+
 
 const Apresentacao = () => {
+
+    const visible = useAutoHideHeader(500);
+
     return (
         <>
 
@@ -9,7 +14,12 @@ const Apresentacao = () => {
             <Link to="/">Mateus</Link>
         </h1>
         
-        <header className='header'>
+        <header className={`
+        header
+        fixed top-0 right-0 z-[99]
+        transition-all duration-300 ease-in-out
+        ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
+        `}>
 
                 <nav className='ml-10'>
                     <ul className='flex gap-20'>
@@ -22,6 +32,10 @@ const Apresentacao = () => {
 
                         <li className='text-black font-extrabold uppercase hover:scale-105 transition-all duration-200'>
                             <a href="#info"rel="noopener noreferrer">Information</a>
+                        </li>
+
+                        <li className='text-black font-extrabold uppercase hover:scale-105 transition-all duration-200'>
+                            <a href="#"rel="noopener noreferrer">Home</a>
                         </li>
                     </ul>
                 </nav>

@@ -1,9 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Components/Home/Index.jsx'
 import './index.css'
+
 import Apresentacao from './Pages/Index.jsx';
+import Home from './Components/Home/Index.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
