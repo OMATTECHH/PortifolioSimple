@@ -10,7 +10,6 @@ export function useAutoHideHeader(delay = 200) {
             
             setVisible(false);
 
-            // 🧹 Limpa o timer anterior
             if (timeoutRef.current) {
                 clearTimeout(timeoutRef.current);
             }
