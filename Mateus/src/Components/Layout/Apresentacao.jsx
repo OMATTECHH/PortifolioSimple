@@ -5,7 +5,7 @@ import {useAutoHideHeader}  from "../../Hooks/useAutoHideHeader.jsx";
 
 const Apresentacao = () => {
 
-    const {visible} = useAutoHideHeader(200);
+    const {visible} = useAutoHideHeader(300);
 
     return (
         <>
