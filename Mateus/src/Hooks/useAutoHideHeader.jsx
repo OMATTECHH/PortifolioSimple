@@ -7,7 +7,7 @@ export function useAutoHideHeader(delay = 200) {
 
     useEffect(() => {
         const onScroll = () => {
-            // 👻 Esconde enquanto está rolando
+            
             setVisible(false);
 
             // 🧹 Limpa o timer anterior
@@ -15,7 +15,6 @@ export function useAutoHideHeader(delay = 200) {
                 clearTimeout(timeoutRef.current);
             }
 
-            // ⏱️ Quando parar de rolar, mostra de novo
             timeoutRef.current = setTimeout(() => {
                 setVisible(true);
             }, delay);
