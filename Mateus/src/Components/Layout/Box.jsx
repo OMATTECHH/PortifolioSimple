@@ -5,6 +5,7 @@ const Box = () => {
     return (
         <>
             <main className='box'>
+                
                 <div className='flex justify-between'>
                     <div className='ml-10 mt-5'>
                         <h3 className='text-white hover:scale-105 transition-all duration-200'><strong>Mateus</strong></h3>
@@ -15,6 +16,7 @@ const Box = () => {
                         <p className='text-white font-bold uppercase text-sm hover:scale-105 transition-all duration-200'>let´s create</p>
                     </div>
                 </div>
+
                     <h1 className='text-white font-extrabold uppercase text-7xl mt-25 ml-15 w-52 hover:scale-105 transition-all duration-200'>Hello, I´m a Developer</h1>
 
                     <div className='ml-15 mt-4'>
