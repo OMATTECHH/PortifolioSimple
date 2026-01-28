@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import {useAutoHideHeader}  from "../../Hooks/useAutoHideHeader.jsx";
 
@@ -6,43 +6,49 @@ import {useAutoHideHeader}  from "../../Hooks/useAutoHideHeader.jsx";
 const Apresentacao = () => {
 
     const {visible} = useAutoHideHeader(300);
+    const [darkMode, setDarkMode] = useState(false)
+    const [glassMor, setGlassMor] = useState(false)
+
+    const handleDark = () => {
+        setDarkMode(!darkMode)
+        setGlassMor(!glassMor)
+    };
 
     return (
-        <>
-
-        <h1 className='text-white font-extrabold uppercase absolute top-0 left-0 z-2 text-4xl ml-20 mt-3 title hover:scale-105 transition-all duration-200'>
+        <div className={darkMode && 'dark'}>
+        <div className='min-h-[161dvh] dark:bg-neutral-900'>
+        <h1 className='text-black font-extrabold uppercase absolute top-0 left-0 z-2 text-4xl ml-20 mt-3 title hover:scale-105 transition-all duration-200 dark:text-white'>
             <Link to="/">Mateus</Link>
         </h1>
         
-        <header className={`
-        header
-        fixed top-0 right-0 z-[99]
-        transition-all duration-300 ease-in-out
-        ${visible ? "opacity-100" : "opacity-0"}
-        `}>
+        <header className={`header fixed top-0 right-0 z-99 transition-all duration-300 ease-in-out ${visible ? "opacity-100" : "opacity-0"} dark:bg-neutral-100 bg-neutral-800`}>
 
                 <nav className='ml-10'>
                     <ul className='flex gap-20'>
-                        <li className='text-black font-extrabold uppercase hover:scale-105 transition-all duration-200'>
+                        <li className='text-white font-extrabold uppercase hover:scale-105 transition-all duration-200 dark:text-black mt-1'>
                             <a href="#sobre" rel="noopener noreferrer">About me</a>
                         </li>
-                        <li className='text-black font-extrabold uppercase hover:scale-105 transition-all duration-200'>
+                        <li className='text-white font-extrabold uppercase hover:scale-105 transition-all duration-200 dark:text-black mt-1'>
                             <a href="#projetos"rel="noopener noreferrer">Projects</a>
                         </li>
 
-                        <li className='text-black font-extrabold uppercase hover:scale-105 transition-all duration-200'>
+                        <li className='text-white font-extrabold uppercase hover:scale-105 transition-all duration-200 dark:text-black mt-1'>
                             <a href="#info"rel="noopener noreferrer">Information</a>
                         </li>
 
-                        <li className='text-black font-extrabold uppercase hover:scale-105 transition-all duration-200'>
+                        <li className='text-white font-extrabold uppercase hover:scale-105 transition-all duration-200 dark:text-black mt-1'>
                             <a href="#"rel="noopener noreferrer">Home</a>
+                        </li>
+
+                        <li className='text-white font-extrabold uppercase hover:scale-105 transition-all duration-200 dark:text-black bg-neutral-600 rounded-2xl p-1 dark:text-white'>
+                            <button onClick={handleDark} className='cursor-pointer'>Dark</button>
                         </li>
                     </ul>
                 </nav>
 
         </header>
 
-        <div className='box-2'>
+        <div className={`box-2 bg-neutral-800 ${glassMor && 'glass'}`}>
             <h2 className="font-extrabold text-6xl uppercase text-center my-10 text-white hover:scale-105 transition-all duration-200" id='sobre'>
                 Apresentação
             </h2>
@@ -66,7 +72,7 @@ const Apresentacao = () => {
         </div>
 
         
-            <div className='box-3 h-80 p-7'>
+            <div className={`box-3 h-80 p-7 bg-neutral-800 ${glassMor && 'glass'}`}>
 
                 <h2 className="font-extrabold text-6xl uppercase text-center mt-3 text-white hover:scale-105 transition-all duration-200" id='projetos'>
                     Projetos Principais
@@ -81,15 +87,14 @@ const Apresentacao = () => {
                 </ul>
             </div>
 
-        <footer className='box-4 flex justify-between items-center  text-sm' id='info'>
+        <footer className={`box-4 flex justify-between items-center text-sm  bg-neutral-800 ${glassMor && 'glass'}`} id='info'>
                     <p className='text-center text-white hover:scale-105 transition-all duration-200  '>Desenvolvido por Mateus</p>
                     <p className='text-center text-white hover:scale-105 transition-all duration-200 '>© Todos os direitos reservados</p>
                     <p className='text-center text-white hover:scale-105 transition-all duration-200 '>@2026</p>
                     <p className='text-center text-white hover:scale-105 transition-all duration-200 '><a href="https://www.instagram.com/mattechh.dev/" target='_blank'  rel="noopener noreferrer" >@mattech.dev</a></p>
         </footer>
-
-
-        </>
+            </div>
+        </div>
     )
 }
 

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useAutoHideHeader(delay = 200) {
+    
     const [visible, setVisible] = useState(true)
     const timeoutRef = useRef(null);
 
