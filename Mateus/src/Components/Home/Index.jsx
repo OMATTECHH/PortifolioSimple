@@ -1,12 +1,14 @@
 import React from 'react'
 
 // Fundo da página
-import Principal from './Principal'
+import Box from '../Layout/Box.jsx'
+import UsedBalls from '../Common/UsedBalls.jsx'
 
 const Index = () => {
     return (
         <>
-            <Principal/>
+            <UsedBalls/>
+            <Box/>
         </>
     )
 }

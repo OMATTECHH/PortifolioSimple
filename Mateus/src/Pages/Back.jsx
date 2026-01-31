@@ -1,12 +1,11 @@
 import React from 'react'
-
-import Apresentacao from '../Components/Layout/Apresentacao'
-import Galaxy from "../Components/Common/Galaxy";
+import Apresentacao from '../Components/Layout/Apresentacao.jsx'
+import UsedFloating from '../Components/Common/UsedFloating.jsx'
 
 const Back = () => {
     return (
         <>  
-            <Galaxy/>
+            <UsedFloating/>
             <Apresentacao/>
         </>
     )

@@ -25,7 +25,7 @@ const Box = () => {
 
                     <div className='flex justify-center mt-20'>
                         <div>
-                            <Link className='btn hover:scale-105 transition-all duration-200' to="/apresentacao">Apresentação</Link>
+                            <Link className='btn hover:scale-105 transition-all duration-200' to="/info">Apresentação</Link>
                         </div>
                     </div>
             </main>
