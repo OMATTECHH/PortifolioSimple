@@ -1,11 +1,11 @@
 import React from 'react'
 import Apresentacao from '../Components/Layout/Apresentacao.jsx'
-import UsedFloating from '../Components/Common/UsedFloating.jsx'
+import UsedRai from '../Components/Common/UsedRai.jsx'
 
 const Back = () => {
     return (
         <>  
-            <UsedFloating/>
+            <UsedRai/>
             <Apresentacao/>
         </>
     )

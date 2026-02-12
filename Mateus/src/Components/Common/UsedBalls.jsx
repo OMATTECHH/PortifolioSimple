@@ -5,8 +5,8 @@ const UsedBalls = () => {
     return (
         <>
             <MetaBalls
-                color="#a34fe8"
-                cursorBallColor="#a34fe8"
+                color="#ffffff"
+                cursorBallColor="#ffffff"
                 cursorBallSize={2}
                 ballCount={15}
                 animationSize={30}

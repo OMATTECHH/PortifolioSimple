@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { useAutoHideHeader } from "../../Hooks/useAutoHideHeader.jsx";
 import UsedText from "../Common/UsedText.jsx";
 import { Link} from "react-router-dom";
@@ -7,34 +6,6 @@ import { Link} from "react-router-dom";
 const Apresentacao = () => {
 
     const { visible } = useAutoHideHeader(300);
-
-    const [darkMode, setDarkMode] = useState(() => {
-        return localStorage.getItem('theme') === 'dark' ? true : false
-    })
-
-    useEffect(() => {
-        const html = document.documentElement;
-
-        try {
-            if (darkMode) {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            }
-        } catch (err) {
-            console.log(err);
-
-        }
-    }, [darkMode])
-
-    const [glassMor, setGlassMor] = useState(true)
-
-    const handleDark = () => {
-        setDarkMode(!darkMode)
-        setGlassMor(!glassMor)
-    };
 
     return (
         <>
@@ -58,17 +29,12 @@ const Apresentacao = () => {
                         <li className='text-white font-extrabold hover:scale-105 transition-all duration-200 dark:text-black mt-1 uppercase'>
                             <Link to='/'>Home</Link>
                         </li>
-
-
-                        <li className='text-white font-extrabold uppercase hover:scale-105 transition-all duration-200 dark:text-black bg-neutral-600 rounded-2xl p-1 dark:text-white'>
-                            <button onClick={handleDark} className='cursor-pointer'>Dark</button>
-                        </li>
                     </ul>
                 </nav>
 
             </header>
 
-            <div className={`box-2 bg-neutral-800 ${glassMor && 'glass'}`}>
+            <div className="box-2 bg-neutral-800 glass">
                 <h2 className="font-extrabold text-6xl uppercase text-center my-10 text-white hover:scale-105 transition-all duration-200" id='sobre'>
                     Apresentação
                 </h2>
@@ -92,7 +58,7 @@ const Apresentacao = () => {
             </div>
 
 
-            <div className={`box-3 h-80 p-7 bg-neutral-800 ${glassMor && 'glass'}`}>
+            <div className={`box-3 h-80 p-7 bg-neutral-800 glass`}>
 
                 <h2 className="font-extrabold text-6xl uppercase text-center mt-3 text-white hover:scale-105 transition-all duration-200" id='projetos'>
                     Projetos Principais
@@ -107,7 +73,7 @@ const Apresentacao = () => {
                 </ul>
             </div>
 
-            <footer className={`box-4 flex justify-between items-center text-sm  bg-neutral-800 ${glassMor && 'glass'}`} id='info'>
+            <footer className={`box-4 flex justify-between items-center text-sm  bg-neutral-800 glass`} id='info'>
                 <p className='text-center text-white hover:scale-105 transition-all duration-200  '>Desenvolvido por Mateus</p>
                 <p className='text-center text-white hover:scale-105 transition-all duration-200 '>© Todos os direitos reservados</p>
                 <p className='text-center text-white hover:scale-105 transition-all duration-200 '>@2026</p>
